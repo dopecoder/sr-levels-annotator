@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support and Resistance Levels Annotator</title>
+    <script src="https://unpkg.com/lightweight-charts@latest/dist/lightweight-charts.standalone.production.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0px;
+        }
+
+        #header {
+            background-color: #222222;
+            position: absolute;
+            top: 0;
+            left: 50;
+            width: 100%;
+            height: 50px;
+            padding-left: 50px;
+        }
+
+        #chart {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: calc(100% - 50px);
+            height: calc(100% - 50px);
+            background: #222222;
+        }
+
+        #toolbar {
+            background-color: #222222;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header" class="flex flex-row justify-between">
+        <div class="info px-2 flex flex-row justify-center">
+            <div id="ticker_name" class="flex flex-row justify-center items-center font-extrabold text-xl">Name</div>
+        </div>
+        <div class="actions px-2 flex flex-row items-center">
+            <button id="save-button" class="btn btn-primary btn-sm">Save</button>
+        </div>
+    </div>
+
+    <div id="toolbar" class="flex flex-col items-center">
+        <a href="#" class="w-12 h-12 mb-4 grid items-center justify-center">
+            <svg width="36" height="28" viewBox="0 0 36 28" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 22H7V11H0V4h14v18zM28 22h-12l7.5-18h8L28 22z" fill="currentColor"></path>
+                <circle cx="20" cy="8" r="4" fill="currentColor"></circle>
+            </svg>
+        </a>
+
+        <button id="support-button"
+            class="w-10 h-10 mb-4 grid items-center justify-center hover:bg-[#444444] rounded-md border-[#444444] border">
+            <!-- <i class="fa-solid fa-arrow-up" style="color: green;"></i> -->
+            <div class="text-green-500">S</div>
+        </button>
+
+        <button id="resistance-button"
+            class="w-10 h-10 mb-4 grid items-center justify-center hover:bg-[#444444] rounded-md border-[#444444] border">
+            <!-- <i class="fa-solid fa-arrow-down" style="color: red;"></i> -->
+            <div class="text-red-500">R</div>
+        </button>
+    </div>
+
+
+    <div id="chart"></div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

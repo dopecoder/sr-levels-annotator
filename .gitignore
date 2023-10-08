@@ -1,0 +1,22 @@
+# Flask stuff
+__pycache__/
+*.py[cod]
+instance/
+.local/
+env/
+venv/
+env.bak/
+env/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg-info/
+*.egg
+*.log
+*.swp
+*.swo
+*.DS_Store
+*.idea/
+*.vscode/
